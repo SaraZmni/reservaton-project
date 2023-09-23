@@ -13,12 +13,26 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "sourceMap": true, // Generate corrresponding .map file
+    "declaration": true, // Generate corresponding .d.ts file
+    "experimentalDecorators": true, // Enables experimental support for ES decorators
+    "baseUrl": "./src", // for absolute imports (import Button from 'components/Button')
+    "allowUnreachableCode": false,
+    "noImplicitReturns": true,
+    "importHelpers": true,
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@routes/*": ["routes/*"],
+      "@components/*": ["components/*"],
+      "@helpers/*": ["helpers/*"],
+      "@configs/*": ["configs/*"],
+      "@uikit/*": ["components/general/ui-kit/*"],
+    }
   },
   "include": ["src"],  // *** The files TypeScript should type check ***
   "references": [{ "path": "./tsconfig.node.json" }],
